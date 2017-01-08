@@ -16,12 +16,12 @@ CHIP DMux4Way {
     OUT a, b, c, d;
 
     PARTS:
-    // This gate sets x1 or x2 as 'true'
-    DMux(in=in, sel=sel[1], a=x1, b=x2);
+    // This gate sets t1 or t2 as 'true'
+    DMux(in=in, sel=sel[1], a=t1, b=t2);
 
-    // This will only apply on x1 or x2
+    // This will only apply on t1 or t2
     // depending on which is false from
     // DMux gate above.
-    DMux(in=x1, sel=sel[0], a=a, b=b);
-    DMux(in=x2, sel=sel[0], a=c, b=d);
+    DMux(in=t1, sel=sel[0], a=a, b=b);
+    DMux(in=t2, sel=sel[0], a=c, b=d);
 }
