@@ -18,5 +18,11 @@ CHIP Mux8Way16 {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    // Same logic as Mux4Way16
+    // Use the first 2 bits to break inputs into 2
+    Mux4Way16(a=a, b=b, c=c, d=d, sel=sel[0..1], out=aTod);
+    Mux4Way16(a=e, b=f, c=g, d=h, sel=sel[0..1], out=eToh);
+
+    // From the last bit, make a selection
+    Mux16(a=aTod, b=eToh, sel=sel[2], out=out);
 }
