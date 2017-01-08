@@ -1,4 +1,4 @@
-### (The Elements of Computing Systems)[https://www.amazon.com/Elements-Computing-Systems-Building-Principles/dp/0262640686/ref=ed_oe_p]
+### [The Elements of Computing Systems](https://www.amazon.com/Elements-Computing-Systems-Building-Principles/dp/0262640686/ref=ed_oe_p)
 
 Building a Modern Computer from First Principals
 
