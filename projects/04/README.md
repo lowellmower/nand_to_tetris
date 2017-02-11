@@ -12,4 +12,21 @@ DEST = binary to map to 8 different desitinations on a destination table
 JUMP = binary to map to 8 different jump conditions on jump table
 ```
 
+### Screen
+I/O Screen Output Memory Map - 256 x 512 (0..255 x 0..511) X / Y coord plane. At each intreceies lay a pixel. For every pixel there is a bit, 1 = on / 0 = off
 
+Integer division to access a pixel:
+
+i = 32*row + col/16
+
+1:
+word = SCREEN[32*row + col/16]
+word = RAM[16384 + 32*row + col/16]
+2:
+set the (col % 16)th bit to 0/1
+3:
+Commit the word to RAM
+
+### Keyboard
+I/O Keyboard Memory Map - transfers scan codes to binary and maps to a memory map e.g. k = 75 which then represents the binary code. An idle keyboard is 0
+KBD
