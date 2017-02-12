@@ -56,7 +56,7 @@ Building a Modern Computer from First Principals
 
 An Address Instruction (A instruction) is a 16 bit value used to set the A register's bit address space. The first of the 16 bits is the control bit and is used to signify if we should (1) or should not (0) execute something. This will play as the control pin in the multiplexers in the CPU
 address:
-
+```
 EXAMPLE A INSTRUCTION:
 
 Instruction: @value
@@ -67,9 +67,9 @@ Binary for @9: 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1
                |        represents 9
                |
       Negative control pin
-
+```
 A Compute Instruction (C Instruction) is a 16 bit value which essentially communicate answers to three questions; 1.) What to compute, 2.) Where to store that computed value, and 3.) What to do next.
-
+```
 EXAMPLE C INSTRUCTION:
 
 Instruction: dest=comp;jump
@@ -88,7 +88,8 @@ Note: All C instructions begin with three 1
 C instruction bit       |                   Destination         |
        |           Computation                  bits        Jump bits
   Unused bits          bits
-```bash
+```
+```
 COMPUTATION TABLE:
 +----------------+-------------------------+---------------------+
 |  (when a=0)    |    c1 c2 c3 c4 c5 c6    |     (when a=1)      |
@@ -132,7 +133,7 @@ COMPUTATION TABLE:
 +----------------+-------------------------+---------------------+
 ```
 
-```bash
+```
 DESTINATION TABLE:
 +----------------+----------------+--------------------------------------------------+
 |   d1 d2 d3     |    Mnemonic    |    Destination (where to store computed value)   |
@@ -159,11 +160,11 @@ Recall that the format of the C-instruction is 111a cccc ccdd djjj. Suppose
 we want the computer to increment the value of Memory[7] by 1 and to also store the
 result in the D register. According to tables above, this can be accomplished by
 the following instructions:
-```bash
+```
 0000 0000 0000 0111 // @7
 1111 1101 1101 1000 // MD=M+1
 ```
-```bash
+```
 JUMP TABLE:
 +----------------------------------+----------------+-------------------+
 |     j1          j2        j3     |    Mnemonic    |       Effect      |
